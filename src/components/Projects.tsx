@@ -85,7 +85,7 @@ const Projects = () => {
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center space-x-2 w-full bg-slate-800 hover:bg-slate-900 text-white py-3 px-4 rounded-lg font-semibold transition-all duration-300 group-hover:shadow-lg border border-slate-400 hover:border-slate-600"
+                  className="flex items-center justify-center space-x-2 w-full bg-slate-200 hover:bg-slate-900 text-white py-3 px-4 rounded-lg font-semibold transition-all duration-300 group-hover:shadow-lg border border-slate-400 hover:border-slate-600"
                 >
                   <Github size={18} />
                   <span>View on GitHub</span>
