@@ -1,6 +1,6 @@
 import React from 'react';
 import { Code, Palette, Zap } from 'lucide-react';
-import Lottie from 'lottie-web';
+import Lottie from 'lottie-react';
 import animationData from '../assets/developer-animation.json.json';
 
 const About = () => {
@@ -11,7 +11,7 @@ const About = () => {
         <Lottie
           animationData={animationData}
           loop={true}
-          autoplay={true}
+          autoPlay={true}
           style={{ width: '100%', height: '100%' }}
         />
       </div>
