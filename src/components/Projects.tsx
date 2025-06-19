@@ -93,7 +93,7 @@ const Projects = () => {
               </div>
               
               {/* Folder corner fold effect */}
-              <div className="absolute top-2 right-0 w-8 h-8 bg-slate-600 group-hover:bg-slate-500 transition-colors duration-300" 
+              <div className="absolute top-0 right-0 w-8 h-8 bg-slate-600 group-hover:bg-slate-500 transition-colors duration-300" 
                    style={{
                      clipPath: 'polygon(0 0, 100% 0, 100% 100%)'
                    }}>
