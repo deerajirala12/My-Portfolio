@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
+import Lottie from 'lottie-react';
 
 const Hero = () => {
   const scrollToAbout = () => {
@@ -9,9 +10,106 @@ const Hero = () => {
     }
   };
 
+  // Playful bot animation data (using a public Lottie animation)
+  const botAnimationData = {
+    "v": "5.7.4",
+    "fr": 30,
+    "ip": 0,
+    "op": 90,
+    "w": 400,
+    "h": 400,
+    "nm": "Bot Animation",
+    "ddd": 0,
+    "assets": [],
+    "layers": [
+      {
+        "ddd": 0,
+        "ind": 1,
+        "ty": 4,
+        "nm": "Bot Body",
+        "sr": 1,
+        "ks": {
+          "o": {"a": 0, "k": 100},
+          "r": {"a": 1, "k": [
+            {"i": {"x": [0.833], "y": [0.833]}, "o": {"x": [0.167], "y": [0.167]}, "t": 0, "s": [0]},
+            {"i": {"x": [0.833], "y": [0.833]}, "o": {"x": [0.167], "y": [0.167]}, "t": 45, "s": [10]},
+            {"t": 90, "s": [0]}
+          ]},
+          "p": {"a": 0, "k": [200, 200, 0]},
+          "a": {"a": 0, "k": [0, 0, 0]},
+          "s": {"a": 1, "k": [
+            {"i": {"x": [0.833, 0.833, 0.833], "y": [0.833, 0.833, 0.833]}, "o": {"x": [0.167, 0.167, 0.167], "y": [0.167, 0.167, 0.167]}, "t": 0, "s": [100, 100, 100]},
+            {"i": {"x": [0.833, 0.833, 0.833], "y": [0.833, 0.833, 0.833]}, "o": {"x": [0.167, 0.167, 0.167], "y": [0.167, 0.167, 0.167]}, "t": 30, "s": [110, 110, 100]},
+            {"t": 60, "s": [100, 100, 100]}
+          ]}
+        },
+        "ao": 0,
+        "shapes": [
+          {
+            "ty": "gr",
+            "it": [
+              {
+                "ty": "rc",
+                "d": 1,
+                "s": {"a": 0, "k": [120, 140]},
+                "p": {"a": 0, "k": [0, 0]},
+                "r": {"a": 0, "k": 20}
+              },
+              {
+                "ty": "fl",
+                "c": {"a": 0, "k": [0.4, 0.6, 1, 1]},
+                "o": {"a": 0, "k": 100}
+              }
+            ]
+          }
+        ],
+        "ip": 0,
+        "op": 90,
+        "st": 0
+      }
+    ]
+  };
+
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 to-slate-800">
-      <div className="max-w-4xl mx-auto px-6 text-center">
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 to-slate-800 relative overflow-hidden">
+      {/* Playful Bot Animation - positioned on the right */}
+      <div className="absolute top-1/2 right-8 transform -translate-y-1/2 w-64 h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 z-10 pointer-events-none opacity-70">
+        <div className="relative w-full h-full">
+          {/* Fallback animated bot using CSS */}
+          <div className="w-full h-full flex items-center justify-center">
+            <div className="relative animate-bounce">
+              {/* Bot Body */}
+              <div className="w-24 h-32 bg-gradient-to-b from-blue-400 to-blue-600 rounded-2xl relative shadow-lg">
+                {/* Bot Eyes */}
+                <div className="absolute top-6 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                  <div className="w-3 h-3 bg-white rounded-full animate-pulse"></div>
+                  <div className="w-3 h-3 bg-white rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+                </div>
+                
+                {/* Bot Mouth */}
+                <div className="absolute top-12 left-1/2 transform -translate-x-1/2 w-6 h-2 bg-white rounded-full opacity-80"></div>
+                
+                {/* Bot Arms */}
+                <div className="absolute top-16 -left-4 w-3 h-8 bg-blue-500 rounded-full animate-pulse"></div>
+                <div className="absolute top-16 -right-4 w-3 h-8 bg-blue-500 rounded-full animate-pulse" style={{animationDelay: '0.3s'}}></div>
+                
+                {/* Bot Antenna */}
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-1 h-4 bg-blue-300 rounded-full">
+                  <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-yellow-400 rounded-full animate-ping"></div>
+                </div>
+              </div>
+              
+              {/* Bot Base/Legs */}
+              <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                <div className="w-3 h-6 bg-blue-500 rounded-full"></div>
+                <div className="w-3 h-6 bg-blue-500 rounded-full"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-4xl mx-auto px-6 text-center relative z-20">
         <div className="animate-fade-in">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
             Hello, I'm{' '}
