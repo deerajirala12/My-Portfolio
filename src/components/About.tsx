@@ -1,6 +1,6 @@
 import React from 'react';
 import { Code, Palette, Zap } from 'lucide-react';
-import Lottie from 'lottie-react';
+import Lottie from 'lottie-web';
 import animationData from '../assets/developer-animation.json.json';
 
 const About = () => {
