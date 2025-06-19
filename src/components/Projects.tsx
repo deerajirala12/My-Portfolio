@@ -1,23 +1,31 @@
 import React from 'react';
-import { ExternalLink, Github } from 'lucide-react';
+import { Folder, Github } from 'lucide-react';
 
 const Projects = () => {
   const projects = [
     {
       title: 'CRUD Application',
       description: 'A simple CRUD (Create, Read, Update, Delete) application built using React and Node.js that allows users to manage their daily tasks.',
-      image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800',
       tech: ['React', 'Node.js', 'PostgreSQL'],
-      liveUrl: 'https://example-crud.com',
-      githubUrl: 'https://github.com/yourusername/crud-app',
+      githubUrl: 'https://github.com/deerajirala12/crud-app',
     },
     {
       title: 'Task Management App',
       description: 'A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
-      image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800',
       tech: ['Vue.js', 'Firebase', 'Tailwind CSS'],
-      liveUrl: 'https://example-tasks.com',
-      githubUrl: 'https://github.com/yourusername/task-manager',
+      githubUrl: 'https://github.com/deerajirala12/task-manager',
+    },
+    {
+      title: 'Weather Dashboard',
+      description: 'A responsive weather application that displays current weather conditions and forecasts using external weather APIs.',
+      tech: ['React', 'API Integration', 'CSS3'],
+      githubUrl: 'https://github.com/deerajirala12/weather-dashboard',
+    },
+    {
+      title: 'E-commerce Frontend',
+      description: 'A modern e-commerce frontend with shopping cart functionality, product filtering, and responsive design.',
+      tech: ['React', 'Redux', 'Styled Components'],
+      githubUrl: 'https://github.com/deerajirala12/ecommerce-frontend',
     }
   ];
 
@@ -26,66 +34,69 @@ const Projects = () => {
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Featured Projects
+            My Projects
           </h2>
           <p className="text-xl text-slate-300 max-w-2xl mx-auto">
-            A selection of my recent work, showcasing different technologies and problem-solving approaches.
+            A collection of my work showcasing different technologies and problem-solving approaches.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="dark-card rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+              className="group relative bg-slate-700 hover:bg-slate-600 rounded-xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border border-slate-600 hover:border-slate-500"
             >
-              <div className="aspect-video overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-white mb-2">
+              {/* Folder Icon */}
+              <div className="flex items-center mb-6">
+                <div className="relative">
+                  <Folder 
+                    size={48} 
+                    className="text-yellow-400 group-hover:text-yellow-300 transition-colors duration-300" 
+                  />
+                  {/* Folder tab effect */}
+                  <div className="absolute -top-1 -right-1 w-4 h-2 bg-yellow-400 group-hover:bg-yellow-300 rounded-t transition-colors duration-300"></div>
+                </div>
+                <h3 className="text-xl font-bold text-white ml-4 group-hover:text-slate-100 transition-colors duration-300">
                   {project.title}
                 </h3>
-                <p className="text-slate-300 mb-4 leading-relaxed">
-                  {project.description}
-                </p>
-                
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tech.map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className="tech-badge px-3 py-1 rounded-full text-sm font-medium"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                
-                <div className="flex items-center space-x-4">
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center space-x-2 text-blue-400 hover:text-blue-300 transition-colors duration-200"
+              </div>
+              
+              {/* Project Description */}
+              <p className="text-slate-300 group-hover:text-slate-200 mb-6 leading-relaxed transition-colors duration-300">
+                {project.description}
+              </p>
+              
+              {/* Tech Stack */}
+              <div className="flex flex-wrap gap-2 mb-6">
+                {project.tech.map((tech, techIndex) => (
+                  <span
+                    key={techIndex}
+                    className="bg-slate-800 group-hover:bg-slate-900 text-slate-300 group-hover:text-slate-200 px-3 py-1 rounded-full text-sm font-medium transition-all duration-300"
                   >
-                    <ExternalLink size={16} />
-                    <span>Live Demo</span>
-                  </a>
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center space-x-2 text-slate-300 hover:text-white transition-colors duration-200"
-                  >
-                    <Github size={16} />
-                    <span>View Code</span>
-                  </a>
-                </div>
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              
+              {/* GitHub Link */}
+              <div className="absolute bottom-6 left-8 right-8">
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center space-x-2 w-full bg-slate-800 hover:bg-slate-900 text-white py-3 px-4 rounded-lg font-semibold transition-all duration-300 group-hover:shadow-lg border border-slate-600 hover:border-slate-500"
+                >
+                  <Github size={18} />
+                  <span>View on GitHub</span>
+                </a>
+              </div>
+              
+              {/* Folder corner fold effect */}
+              <div className="absolute top-0 right-0 w-8 h-8 bg-slate-600 group-hover:bg-slate-500 transition-colors duration-300" 
+                   style={{
+                     clipPath: 'polygon(0 0, 100% 0, 100% 100%)'
+                   }}>
               </div>
             </div>
           ))}

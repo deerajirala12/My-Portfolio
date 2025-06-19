@@ -41,12 +41,6 @@ const Header = () => {
               About
             </button>
             <button
-              onClick={() => scrollToSection('skills')}
-              className="text-slate-300 hover:text-white transition-colors duration-200"
-            >
-              Skills
-            </button>
-            <button
               onClick={() => scrollToSection('projects')}
               className="text-slate-300 hover:text-white transition-colors duration-200"
             >
@@ -78,12 +72,6 @@ const Header = () => {
                 className="text-left text-slate-300 hover:text-white transition-colors duration-200"
               >
                 About
-              </button>
-              <button
-                onClick={() => scrollToSection('skills')}
-                className="text-left text-slate-300 hover:text-white transition-colors duration-200"
-              >
-                Skills
               </button>
               <button
                 onClick={() => scrollToSection('projects')}
