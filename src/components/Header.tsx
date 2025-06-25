@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, FileText } from 'lucide-react';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -46,6 +46,15 @@ const Header = () => {
             >
               Projects
             </button>
+            <a
+              href="#" // You can update this URL to your resume link
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-2 text-slate-300 hover:text-white transition-colors duration-200"
+            >
+              <FileText size={18} />
+              <span>Resume</span>
+            </a>
             <button
               onClick={() => scrollToSection('contact')}
               className="btn-primary px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors duration-200"
@@ -79,6 +88,15 @@ const Header = () => {
               >
                 Projects
               </button>
+              <a
+                href="#" // You can update this URL to your resume link
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 text-slate-300 hover:text-white transition-colors duration-200 w-fit"
+              >
+                <FileText size={18} />
+                <span>Resume</span>
+              </a>
               <button
                 onClick={() => scrollToSection('contact')}
                 className="text-left btn-primary px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors duration-200 w-fit"
