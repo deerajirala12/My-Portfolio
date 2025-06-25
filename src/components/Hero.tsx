@@ -70,9 +70,9 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 to-slate-800 relative overflow-hidden">
-      {/* Playful Bot Animation - positioned on the right */}
-      <div className="absolute top-1/2 right-8 transform -translate-y-1/2 w-64 h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 z-10 pointer-events-none opacity-70">
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 to-slate-800 relative overflow-hidden pt-20 md:pt-0">
+      {/* Playful Bot Animation - hidden on mobile, positioned on the right for desktop */}
+      <div className="hidden lg:block absolute top-1/2 right-8 transform -translate-y-1/2 w-64 h-64 xl:w-80 xl:h-80 z-10 pointer-events-none opacity-70">
         <div className="relative w-full h-full">
           {/* Fallback animated bot using CSS */}
           <div className="w-full h-full flex items-center justify-center">
@@ -110,14 +110,14 @@ const Hero = () => {
 
       <div className="max-w-4xl mx-auto px-6 text-center relative z-20">
         <div className="animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
             Hello, I'm{' '}
             <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
               Deeraj Irala
             </span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-slate-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl text-slate-300 mb-8 max-w-2xl mx-auto leading-relaxed">
             Passionate front-end developer with a love for crafting clean, responsive UIs using HTML, CSS, and React.js.
           </p>
 

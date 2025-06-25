@@ -44,7 +44,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group relative bg-slate-700 hover:bg-slate-600 rounded-xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border border-slate-600 hover:border-slate-500"
+              className="group relative bg-slate-700 hover:bg-slate-600 rounded-xl p-6 sm:p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border border-slate-600 hover:border-slate-500 pb-20"
             >
               {/* Folder Icon */}
               <div className="flex items-center mb-6">
@@ -56,35 +56,35 @@ const Projects = () => {
                   {/* Folder tab effect */}
                   <div className="absolute -top-1 -right-1 w-4 h-2 bg-yellow-400 group-hover:bg-yellow-300 rounded-t transition-colors duration-300"></div>
                 </div>
-                <h3 className="text-xl font-bold text-white ml-4 group-hover:text-slate-100 transition-colors duration-300">
+                <h3 className="text-lg sm:text-xl font-bold text-white ml-4 group-hover:text-slate-100 transition-colors duration-300">
                   {project.title}
                 </h3>
               </div>
               
               {/* Project Description */}
-              <p className="text-slate-300 group-hover:text-slate-200 mb-6 leading-relaxed transition-colors duration-300">
+              <p className="text-slate-300 group-hover:text-slate-200 mb-6 leading-relaxed transition-colors duration-300 text-sm sm:text-base">
                 {project.description}
               </p>
               
               {/* Tech Stack */}
-              <div className="flex flex-wrap gap-5 mb-6">
+              <div className="flex flex-wrap gap-2 sm:gap-3 mb-6">
                 {project.tech.map((tech, techIndex) => (
                   <span
                     key={techIndex}
-                    className="bg-slate-800 group-hover:bg-slate-900 text-slate-300 group-hover:text-slate-200 px-3 py-1 rounded-full text-sm font-medium transition-all duration-300"
+                    className="bg-slate-800 group-hover:bg-slate-900 text-slate-300 group-hover:text-slate-200 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium transition-all duration-300"
                   >
                     {tech}
                   </span>
                 ))}
               </div>
               
-              {/* GitHub Link */}
-              <div className="absolute bottom-6 left-8 right-8">
+              {/* GitHub Link - positioned at bottom */}
+              <div className="absolute bottom-6 left-6 right-6">
                 <a
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center space-x-2 w-full bg-slate-800 hover:bg-slate-900 text-white py-3 px-4 rounded-lg font-semibold transition-all duration-300 group-hover:shadow-lg border border-slate-400 hover:border-slate-600"
+                  className="flex items-center justify-center space-x-2 w-full bg-slate-800 hover:bg-slate-900 text-white py-3 px-4 rounded-lg font-semibold transition-all duration-300 group-hover:shadow-lg border border-slate-400 hover:border-slate-600 text-sm sm:text-base"
                 >
                   <Github size={18} />
                   <span>View on GitHub</span>
