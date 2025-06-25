@@ -44,7 +44,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group relative bg-slate-700 hover:bg-slate-600 rounded-xl p-6 sm:p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border border-slate-600 hover:border-slate-500 pb-20"
+              className="group relative bg-slate-700 hover:bg-slate-600 rounded-xl p-6 sm:p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border border-slate-600 hover:border-slate-500 flex flex-col"
             >
               {/* Folder Icon */}
               <div className="flex items-center mb-6">
@@ -62,7 +62,7 @@ const Projects = () => {
               </div>
               
               {/* Project Description */}
-              <p className="text-slate-300 group-hover:text-slate-200 mb-6 leading-relaxed transition-colors duration-300 text-sm sm:text-base">
+              <p className="text-slate-300 group-hover:text-slate-200 mb-6 leading-relaxed transition-colors duration-300 text-sm sm:text-base flex-grow">
                 {project.description}
               </p>
               
@@ -78,8 +78,8 @@ const Projects = () => {
                 ))}
               </div>
               
-              {/* GitHub Link - positioned at bottom */}
-              <div className="absolute bottom-6 left-6 right-6">
+              {/* GitHub Link - now in normal flow */}
+              <div className="mt-auto">
                 <a
                   href={project.githubUrl}
                   target="_blank"
