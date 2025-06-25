@@ -1,4 +1,3 @@
-import React from 'react';
 import { Folder, Github } from 'lucide-react';
 
 const Projects = () => {
